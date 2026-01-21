@@ -2,7 +2,7 @@
 # Data Ingestion from S3 to RDS with Fallback to AWS Glue using Dockerized Python
 
 ## Author
-Suraj Molke
+Rutuja Patil
 
 ---
 
@@ -56,9 +56,9 @@ Example: data.csv
 
 ```
 id,name,age,city
-1,Suraj,25,Pune
-2,Rahul,24,Mumbai
-3,Neha,23,Nagpur
+1,Mansi,25,Pune
+2,Dhiraj,24,Mumbai
+3,Sneha,23,Nagpur
 ```
 
 ---
@@ -209,7 +209,22 @@ docker build -t s3-rds-glue .
 ## Step 6: Run Docker Container
 
 ```
-docker run -e AWS_ACCESS_KEY_ID=xxxx -e AWS_SECRET_ACCESS_KEY=xxxx -e AWS_REGION=us-east-1 -e S3_BUCKET=my-bucket -e S3_KEY=students.csv -e RDS_HOST=mydb.xxxxx.us-east-1.rds.amazonaws.com -e RDS_USER=admin -e RDS_PASSWORD=password -e RDS_DB=testdb -e RDS_TABLE=students -e GLUE_DB=fallback_db -e GLUE_TABLE=students_fallback -e GLUE_S3_LOCATION=s3://my-bucket/ s3-rds-glue
+docker run \
+-e AWS_ACCESS_KEY_ID=****** \
+-e AWS_SECRET_ACCESS_KEY=********* \
+-e AWS_REGION=ap-south-1 \
+-e S3_BUCKET=s3-to-rds-ingestion-rutuja \
+-e S3_KEY=data.csv \
+-e RDS_HOST=mydb.chkec0mgun0i.ap-south-1.rds.amazonaws.com \
+-e RDS_USER=admin \
+-e RDS_PASSWORD=RUTUpatil \
+-e RDS_DB=mydb \
+-e RDS_TABLE=mydb \
+-e GLUE_DB=mydb \
+-e GLUE_TABLE=mydb \
+-e GLUE_S3_LOCATION=s3://s3-to-rds-ingestion-rutuja/ \
+s3-rds-glue
+
 ```
 
 ---
@@ -234,7 +249,7 @@ Glue table created successfully!
 
 ### RDS
 ```
-SELECT * FROM students;
+SELECT * FROM mydb;
 ```
 ![screenshot](./screenshot/op.png)
 ### Glue
