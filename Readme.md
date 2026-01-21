@@ -79,7 +79,7 @@ Go to AWS Glue → Databases → Create Database
 Name: mydb
 
 ---
-![screenshot](./screenshot/3.png)
+![screenshot](./Screenshots/3.png)
 ### 4. IAM Permissions Required
 - AmazonS3FullAccess
 - AmazonRDSFullAccess
@@ -228,7 +228,7 @@ s3-rds-glue
 ```
 
 ---
-![screenshot](./screenshot/6.png)
+![screenshot](./Screenshots/op.png)
 ## Step 7: Output
 
 ### If RDS Works
@@ -251,12 +251,12 @@ Glue table created successfully!
 ```
 SELECT * FROM mydb;
 ```
-![screenshot](./screenshot/op.png)
+
 ### Glue
 AWS Glue → Databases → fallback_db → Tables
 
 ---
-![screenshot](./screenshot/6.png)
+
 ## Challenges Faced
 - IAM permission issues
 - RDS connectivity
