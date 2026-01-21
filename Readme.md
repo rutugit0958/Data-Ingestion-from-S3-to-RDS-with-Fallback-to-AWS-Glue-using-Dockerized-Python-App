@@ -62,8 +62,8 @@ id,name,age,city
 ```
 
 ---
-![screenshot](./screenshot/1.png)
-![screenshot](./screenshot/2.png)
+![screenshot](./Screenshots/s3up.png)
+![screenshot](./Screenshots/s3.png)
 ### 2. Create RDS MySQL Database
 - Engine: MySQL
 - DB Name: testdb
